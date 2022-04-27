@@ -1,5 +1,5 @@
 from tkinter import *
-
+import pyserial
 
 LARGEFONT =("Verdana", 35)
 
