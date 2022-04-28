@@ -1,7 +1,18 @@
 from tkinter import *
-import pyserial
+import serial
 
 LARGEFONT =("Verdana", 35)
+
+# here is how we will implement bluetooth serial communication
+# TODO have to bring in the button data
+# TODO have to code a process function
+# TODO have to add the serial controlls after information is processed from the button process functtion
+
+def process(button):
+    try: 
+
+    except:
+
 
 class tkinterApp(Tk):
 	
@@ -42,8 +53,8 @@ class tkinterApp(Tk):
 		frame = self.frames[cont]
 		frame.tkraise()
 
-# first window frame startpage
 
+# first window frame startpage
 class StartPage(Frame):
 	def __init__(self, parent, controller):
 		Frame.__init__(self, parent)
@@ -68,11 +79,6 @@ class StartPage(Frame):
 		# using grid
 		button2.grid(row = 2, column = 1, padx = 10, pady = 10)
 
-		
-
-		
-
-		
 
 		
 # second window frame page1
@@ -139,8 +145,6 @@ class Page2(Frame):
 
 
 		
-
-
 # Driver Code
 app = tkinterApp()
 app.mainloop()
