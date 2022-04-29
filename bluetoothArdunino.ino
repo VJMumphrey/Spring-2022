@@ -43,11 +43,17 @@ void cleanBoard() {
 }
 
 void foward() {
-	
+	ServoFl.writeMicroseconds(2000);
+	ServoFr.writeMicroseconds(1000);
+	ServoBl.writeMicroseconds(1000);
+	ServoBr.writeMicroseconds(2000);
 }
 
 void backward() {
-
+	ServoFl.writeMicroseconds(1000);
+	ServoFr.writeMicroseconds(2000);
+	ServoBl.writeMicroseconds(2000);
+	ServoBr.writeMicroseconds(1000);
 }
 
 void left() {
