@@ -3,15 +3,42 @@ import serial
 
 LARGEFONT =("Verdana", 35)
 
-# here is how we will implement bluetooth serial communication
-# TODO have to bring in the button data
-# TODO have to code a process function
-# TODO have to add the serial controlls after information is processed from the button process functtion
+# checklist for implementing bluetooth serial communication
+# TODO test bringing in button data
+# TODO test and proof process class
 
-def process(button):
-    try: 
 
-    except:
+# prototype class to implement into the buttons
+class Process():
+    def __init__(self, button):
+        self.button = button
+
+    def button_process(self, button):
+        #creates the connection for serial transmission
+        bluetooth = serial.Serial("/dev/rfcomm0", baudrate=9600)
+        
+        # if the button pressed is "automatic" from
+        if button == "Clean"
+            value = 1
+
+        elif button == "Up"
+            value = 2
+
+        elif button == "Down"
+            value = 3
+
+        elif button == "Left"
+            value = 4
+
+        elif button == "Right"
+            value = 5
+        
+        # converts the int value to str then enocdes the str value into byte
+        s = str(value)
+        b = s.encode()
+        bluetooth.write(b)
+        # Recives info from arduino as bytes adn decripts it into str value
+        RXD = (bluetooth.readline()).strip().decode("utf-8")
 
 
 class tkinterApp(Tk):
@@ -82,6 +109,7 @@ class StartPage(Frame):
 
 		
 # second window frame page1
+# contains the automatic profile
 class Page1(Frame):
 	
 	def __init__(self, parent, controller):
@@ -109,6 +137,7 @@ class Page1(Frame):
 
 
 # third window frame page2
+# contains the manual profile
 class Page2(Frame):
 	def __init__(self, parent, controller):
 		Frame.__init__(self, parent)
