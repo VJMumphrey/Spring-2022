@@ -10,12 +10,13 @@ LARGEFONT =("Verdana", 35)
 
 # prototype class to implement into the buttons
 class Process():
+    bluetooth = serial.Serial("/dev/rfcomm0", baudrate=9600)
     def __init__(self, button):
         self.button = button
 
     def button_process(self, button):
         #creates the connection for serial transmission
-        bluetooth = serial.Serial("/dev/rfcomm0", baudrate=9600)
+        #bluetooth = serial.Serial("/dev/rfcomm0", baudrate=9600)
         
         # if the button pressed is "automatic" from
         if button == "Clean"
