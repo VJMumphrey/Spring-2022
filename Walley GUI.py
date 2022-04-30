@@ -15,30 +15,32 @@ class Process():
         self.button = button
 
     def button_process(self, button):
-        #creates the connection for serial transmission
+        # creates the connection for serial transmission
         #bluetooth = serial.Serial("/dev/rfcomm0", baudrate=9600)
         
-        # if the button pressed is "automatic" from
-        if button == "Clean"
-            value = 1
+        # assigns the value to be sent serially to the arduino
+        # based on the button pressed
+        while True:
+            if button == "Clean":
+                value = 1
 
-        elif button == "Up"
-            value = 2
+            elif button == "Up":
+                value = 2
 
-        elif button == "Down"
-            value = 3
+            elif button == "Down":
+                value = 3
 
-        elif button == "Left"
-            value = 4
+            elif button == "Left":
+                value = 4
 
-        elif button == "Right"
-            value = 5
+            elif button == "Right":
+                value = 5
         
         # converts the int value to str then enocdes the str value into byte
         s = str(value)
         b = s.encode()
         bluetooth.write(b)
-        # Recives info from arduino as bytes adn decripts it into str value
+        # Recives info from arduino as bytes and decripts it into str value
         RXD = (bluetooth.readline()).strip().decode("utf-8")
 
 
@@ -131,7 +133,7 @@ class Page1(Frame):
 		button2 = Button(self, text ="Manual", command = lambda : controller.show_frame(Page2))
 		button2.grid(row = 2, column = 1, padx = 10, pady = 10)
 
-		Auto = Button(self, text = "Clean", bg="black", fg="white")
+                Auto = Button(self, text = "Clean", bg="black", fg="white", command=lambda : self.process("Clean"))
 		Auto.place(x =  360, y = 150)
 
 
@@ -139,11 +141,12 @@ class Page1(Frame):
 
 # third window frame page2
 # contains the manual profile
-class Page2(Frame):
+class Page2(Frame, Process):
 	def __init__(self, parent, controller):
 		Frame.__init__(self, parent)
 		label = Label(self, text ="Manual", font = LARGEFONT)
 		label.place(x=300,y=0)
+                Process.__init__(self, button)
 
 		# button to show frame 2 with text
 		# layout2
@@ -161,16 +164,16 @@ class Page2(Frame):
 		# using grid
 		button2.grid(row = 2, column = 1, padx = 10, pady = 10)
 
-		Up = Button(self, text = "UP", height = 1, width = 5, bg="black", fg="white")
+                Up = Button(self, text = "UP", height = 1, width = 5, bg="black", fg="white", command=lambda: self.procces("Up"))
 		Up.place(x = 360,y = 100)
 
-		Down = Button(self, text = "DOWN", height = 1, width = 5, bg="black", fg="white")
+                Down = Button(self, text = "DOWN", height = 1, width = 5, bg="black", fg="white", command=lambda: self.procces("Down"))
 		Down.place(x = 360,y = 125)
 
-		Left = Button(self, text = "LEFT", height = 1, width = 5, bg="black", fg="white")
+                Left = Button(self, text = "LEFT", height = 1, width = 5, bg="black", fg="white", command=lambda: self.process("Left"))
 		Left.place(x = 295,y = 125)
 
-		Right = Button(self, text = "RIGHT", height = 1, width = 5, bg="black", fg="white")
+                Right = Button(self, text = "RIGHT", height = 1, width = 5, bg="black", fg="white", command=lambda: self.process("Right"))
 		Right.place(x = 425,y = 125)
 
 
