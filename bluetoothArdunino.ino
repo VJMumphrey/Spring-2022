@@ -19,13 +19,13 @@ void loop () {
 	if (Serial.available() > 0) {
 		int command = Serial.parseInt();
 		if (command == 1) {
-			// cleanBoard();	
+			cleanBoard();	
 		}
 		if (command == 2) {
-			// up				
+			 forword();
 		}
 		if (command == 3) {
-			// down
+			backward();
 		}
 		if (command == 4) {
 			// left
@@ -39,7 +39,12 @@ void loop () {
 clean the board with a automatic cycle
 */
 void cleanBoard() {
-			
+	/*
+	*move forward a certian length dep[ending on the board that we are givin
+	*sray every 10 seconds
+	*rotote and turn in the next lane
+	*move backward in line to where you started
+	*/		
 }
 
 void foward() {

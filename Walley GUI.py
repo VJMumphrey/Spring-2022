@@ -7,10 +7,12 @@ LARGEFONT =("Verdana", 35)
 # TODO test bringing in button data
 # TODO test and proof process class
 
+global bluetooth
+bluetooth = serial.Serial("/dev/rfcomm0", baudrate=9600)
 
 # prototype class to implement into the buttons
 class Process():
-    bluetooth = serial.Serial("/dev/rfcomm0", baudrate=9600)
+    #bluetooth = serial.Serial("/dev/rfcomm0", baudrate=9600)
     def __init__(self, button):
         self.button = button
 
@@ -133,7 +135,7 @@ class Page1(Frame):
 		button2 = Button(self, text ="Manual", command = lambda : controller.show_frame(Page2))
 		button2.grid(row = 2, column = 1, padx = 10, pady = 10)
 
-                Auto = Button(self, text = "Clean", bg="black", fg="white", command=lambda : self.process("Clean"))
+		Auto = Button(self, text = "Clean", bg="black", fg="white", command=lambda : self.process("Clean"))
 		Auto.place(x =  360, y = 150)
 
 
@@ -164,16 +166,16 @@ class Page2(Frame, Process):
 		# using grid
 		button2.grid(row = 2, column = 1, padx = 10, pady = 10)
 
-                Up = Button(self, text = "UP", height = 1, width = 5, bg="black", fg="white", command=lambda: self.procces("Up"))
+        Up = Button(self, text = "UP", height = 1, width = 5, bg="black", fg="white", command=lambda: self.procces("Up"))
 		Up.place(x = 360,y = 100)
 
-                Down = Button(self, text = "DOWN", height = 1, width = 5, bg="black", fg="white", command=lambda: self.procces("Down"))
+		Down = Button(self, text = "DOWN", height = 1, width = 5, bg="black", fg="white", command=lambda: self.procces("Down"))
 		Down.place(x = 360,y = 125)
 
-                Left = Button(self, text = "LEFT", height = 1, width = 5, bg="black", fg="white", command=lambda: self.process("Left"))
+		Left = Button(self, text = "LEFT", height = 1, width = 5, bg="black", fg="white", command=lambda: self.process("Left"))
 		Left.place(x = 295,y = 125)
 
-                Right = Button(self, text = "RIGHT", height = 1, width = 5, bg="black", fg="white", command=lambda: self.process("Right"))
+		Right = Button(self, text = "RIGHT", height = 1, width = 5, bg="black", fg="white", command=lambda: self.process("Right"))
 		Right.place(x = 425,y = 125)
 
 
