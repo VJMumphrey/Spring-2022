@@ -41,7 +41,7 @@ clean the board with a automatic cycle
 void cleanBoard() {
 	/*
 	*move forward a certian length dep[ending on the board that we are givin
-	*sray every 10 seconds
+	*spray every 10 seconds
 	*rotote and turn in the next lane
 	*move backward in line to where you started
 	*/		

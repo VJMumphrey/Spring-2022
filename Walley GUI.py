@@ -148,7 +148,7 @@ class Page2(Frame, Process):
         Frame.__init__(self, parent)
         label = Label(self, text ="Manual", font = LARGEFONT)
         label.place(x=300,y=0)
-        Process.__init__(self, button):
+        Process.__init__(self, button)
 
         # button to show frame 2 with text
         # layout2
