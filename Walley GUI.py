@@ -7,7 +7,6 @@ LARGEFONT =("Verdana", 35)
 # TODO test bringing in button data
 # TODO test and proof process class
 
-global bluetooth
 bluetooth = serial.Serial("/dev/rfcomm0", baudrate=9600)
 
 # prototype class to implement into the buttons
@@ -22,28 +21,35 @@ class Process():
         
         # assigns the value to be sent serially to the arduino
         # based on the button pressed
-        while True:
+        try:
             if button == "Clean":
                 value = 1
 
-            elif button == "Up":
+            if button == "Up":
                 value = 2
 
-            elif button == "Down":
+            if button == "Down":
                 value = 3
 
-            elif button == "Left":
+            if button == "Left":
                 value = 4
 
-            elif button == "Right":
+            if button == "Right":
                 value = 5
-        
-        # converts the int value to str then enocdes the str value into byte
-        s = str(value)
-        b = s.encode()
-        bluetooth.write(b)
-        # Recives info from arduino as bytes and decripts it into str value
-        RXD = (bluetooth.readline()).strip().decode("utf-8")
+            
+            s = str(value)
+            b = s.encode()
+            bluetooth.write(b)
+        except KeyboardInterrupt:
+            print("error")
+            bluetooth.close()
+
+            # converts the int value to str then enocdes the str value into byte
+            
+
+            # Recives info from arduino as bytes and decripts it into str value
+            # RXD = (bluetooth.readline()).strip().decode("utf-8")
+            # print(RXD)
 
 
 class tkinterApp(Tk):
@@ -149,6 +155,7 @@ class Page2(Frame, Process):
         label = Label(self, text ="Manual", font = LARGEFONT)
         label.place(x=300,y=0)
         Process.__init__(self, button)
+        button = self.button
 
         # button to show frame 2 with text
         # layout2
