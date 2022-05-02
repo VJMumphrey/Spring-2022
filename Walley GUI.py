@@ -1,5 +1,4 @@
 from tkinter import *
-import serial
 
 LARGEFONT =("Verdana", 35)
 
