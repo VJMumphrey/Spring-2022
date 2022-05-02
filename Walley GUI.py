@@ -3,13 +3,8 @@ import serial
 
 LARGEFONT =("Verdana", 35)
 
-# window = Tk()
 
-# checklist for implementing bluetooth serial communication
-# TODO test bringing in button data
-# TODO test and proof process class
-
-#         # creates the connection for serial transmission
+# creates the connection for serial transmission
 # bluetooth = serial.Serial("/dev/rfcomm0", baudrate=9600)
 
 
