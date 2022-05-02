@@ -3,46 +3,49 @@ import serial
 
 LARGEFONT =("Verdana", 35)
 
+# window = Tk()
+
 # checklist for implementing bluetooth serial communication
 # TODO test bringing in button data
 # TODO test and proof process class
 
-bluetooth = serial.Serial("/dev/rfcomm0", baudrate=9600)
+#         # creates the connection for serial transmission
+# bluetooth = serial.Serial("/dev/rfcomm0", baudrate=9600)
 
-# prototype class to implement into the buttons
-class Process():
-    #bluetooth = serial.Serial("/dev/rfcomm0", baudrate=9600)
-    def __init__(self, button):
-        self.button = button
 
-    def button_process(self, button):
-        # creates the connection for serial transmission
-        #bluetooth = serial.Serial("/dev/rfcomm0", baudrate=9600)
+# class to implement bluetooth controls from the buttons.
+# dropped due to time and countless errors trying to get bluetooth/serial connection to work.
+
+# class Process():
+#     def __init__(self, button):
+#         self.button = button
+
+#     def button_process(self, button):
         
-        # assigns the value to be sent serially to the arduino
-        # based on the button pressed
-        try:
-            if button == "Clean":
-                value = 1
+#         # assigns the value to be sent serially to the arduino
+#         # based on the button pressed
+#         try:
+#             if button == "Clean":
+#                 value = 1
 
-            if button == "Up":
-                value = 2
+#             if button == "Up":
+#                 value = 2
 
-            if button == "Down":
-                value = 3
+#             if button == "Down":
+#                 value = 3
 
-            if button == "Left":
-                value = 4
+#             if button == "Left":
+#                 value = 4
 
-            if button == "Right":
-                value = 5
+#             if button == "Right":
+#                 value = 5
             
-            s = str(value)
-            b = s.encode()
-            bluetooth.write(b)
-        except KeyboardInterrupt:
-            print("error")
-            bluetooth.close()
+#             s = str(value)
+#             b = s.encode()
+#             bluetooth.write(b)
+#         except KeyboardInterrupt:
+#             print("error")
+#             bluetooth.close()
 
             # converts the int value to str then enocdes the str value into byte
             
@@ -144,18 +147,19 @@ class Page1(Frame):
         Auto = Button(self, text = "Clean", bg="black", fg="white", command=lambda : self.process("Clean"))
         Auto.place(x =  360, y = 150)
 
+        l1 = Label()
 
 
 
 # third window frame page2
 # contains the manual profile
-class Page2(Frame, Process):
+class Page2(Frame): #, Process):
     def __init__(self, parent, controller):
         Frame.__init__(self, parent)
         label = Label(self, text ="Manual", font = LARGEFONT)
         label.place(x=300,y=0)
-        Process.__init__(self, button)
-        button = self.button
+        # Process.__init__(self, button)
+        # button = self.button
 
         # button to show frame 2 with text
         # layout2
@@ -173,16 +177,16 @@ class Page2(Frame, Process):
         # using grid
         button2.grid(row = 2, column = 1, padx = 10, pady = 10)
 
-        Up = Button(self, text = "UP", height = 1, width = 5, bg="black", fg="white", command=lambda: self.procces("Up"))
+        Up = Button(self, text = "UP", height = 1, width = 5, bg="black", fg="white") #, command=lambda: self.procces("Up"))
         Up.place(x = 360,y = 100)
 
-        Down = Button(self, text = "DOWN", height = 1, width = 5, bg="black", fg="white", command=lambda: self.procces("Down"))
+        Down = Button(self, text = "DOWN", height = 1, width = 5, bg="black", fg="white") #, command=lambda: self.procces("Down"))
         Down.place(x = 360,y = 125)
 
-        Left = Button(self, text = "LEFT", height = 1, width = 5, bg="black", fg="white", command=lambda: self.process("Left"))
+        Left = Button(self, text = "LEFT", height = 1, width = 5, bg="black", fg="white") #, command=lambda: self.process("Left"))
         Left.place(x = 295,y = 125)
 
-        Right = Button(self, text = "RIGHT", height = 1, width = 5, bg="black", fg="white", command=lambda: self.process("Right"))
+        Right = Button(self, text = "RIGHT", height = 1, width = 5, bg="black", fg="white") #, command=lambda: self.process("Right"))
         Right.place(x = 425,y = 125)
 
 
