@@ -115,7 +115,7 @@ class StartPage(Frame):
         # using grid
         button2.grid(row = 2, column = 1, padx = 10, pady = 10)
 
-        img = PhotoImage(file="latechlogo")
+        img = PhotoImage(file="Spring-2022/latechlogo.gif")
         Techlogo = Label(self.master, image=img)
         Techlogo.image = img
         Techlogo.place(x=170, y=200)
@@ -146,7 +146,7 @@ class Page1(Frame):
         Auto = Button(self, text = "Clean", bg="black", fg="white", command=lambda : self.process("Clean"))
         Auto.place(x =  360, y = 150)
 
-        img = PhotoImage(file="latechlogo")
+        img = PhotoImage(file="Spring-2022/latechlogo.gif")
         Techlogo = Label(self.master, image=img)
         Techlogo.image = img
         Techlogo.place(x=360, y=200)
@@ -190,7 +190,7 @@ class Page2(Frame): #, Process):
         Right = Button(self, text = "RIGHT", height = 1, width = 5, bg="black", fg="white") #, command=lambda: self.process("Right"))
         Right.place(x = 425,y = 125)
 
-        img = PhotoImage(file="latechlogo.jpg")
+        img = PhotoImage(file="Spring-2022/latechlogo.gif")
         Techlogo = Label(self.master, image=img)
         Techlogo.image = img
         Techlogo.place(x=500, y=200)
