@@ -148,7 +148,7 @@ class Page1(Frame):
         img = PhotoImage(file="latechlogo")
         Techlogo = Label(self.master, image=img)
         Techlogo.image = img
-        Techlogo.grid(row=)
+        Techlogo.place(x=360, y=200)
 
 
 # third window frame page2
@@ -189,10 +189,10 @@ class Page2(Frame): #, Process):
         Right = Button(self, text = "RIGHT", height = 1, width = 5, bg="black", fg="white") #, command=lambda: self.process("Right"))
         Right.place(x = 425,y = 125)
 
-        img = PhotoImage(file="latechlogo")
+        img = PhotoImage(file="latechlogo.jpg")
         Techlogo = Label(self.master, image=img)
         Techlogo.image = img
-        Techlogo.grid(row=)
+        Techlogo.place(x=500, y=200)
 
         
 # Driver Code
