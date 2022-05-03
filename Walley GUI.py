@@ -1,3 +1,4 @@
+from logging import root
 from tkinter import *
 #import serial
 
@@ -116,10 +117,12 @@ class StartPage(Frame):
         # using grid
         button2.grid(row = 2, column = 1, padx = 10, pady = 10)
 
-        img = PhotoImage(file="Spring-2022/latechlogo.gif")
-        Techlogo = Label(self.master, image=img)
+        # create an Image object
+        img = PhotoImage(file="Spring-2022/tech.gif")
+        # create a label in order to present the Image object
+        Techlogo = Label(self, image=img)
         Techlogo.image = img
-        Techlogo.place(x=170, y=200)
+        Techlogo.place(x=625, y=350)
 
         
 # second window frame page1
@@ -144,17 +147,15 @@ class Page1(Frame):
         button2 = Button(self, text ="Manual", command = lambda : controller.show_frame(Page2))
         button2.grid(row = 2, column = 1, padx = 10, pady = 10)
 
-        Auto = Button(self, text = "Clean", bg="black", fg="white") #, command=lambda : self.process("Clean"))
+        Auto = Button(self, text = "   Clean   ", bg="black", fg="white") #, command=lambda : self.process("Clean"))
         Auto.place(x =  360, y = 150)
 
-        #Initialize the file name in a variable
-        path = "Spring-2022/latechlogo.gif"
-        #Create an object of tkinter ImageTk
-        img = PhotoImage(file=(path))
-
-        #Create a Label Widget to display the text or Image
-        Techlogo = Label(self.master, image = img)
-        Techlogo.place(x=200, y=100)
+        #Create an object of Image
+        img = PhotoImage(file="Spring-2022/tech.gif")
+        #Create a Label Widget to display image
+        Techlogo = Label(self, image = img)
+        Techlogo.image = img
+        Techlogo.place(x=625, y=350)
 
 
 # third window frame page2
@@ -195,13 +196,16 @@ class Page2(Frame): #, Process):
         Right = Button(self, text = "RIGHT", height = 1, width = 5, bg="black", fg="white") #, command=lambda: self.process("Right"))
         Right.place(x = 425,y = 125)
 
-        img = PhotoImage(file="Spring-2022/latechlogo.gif")
-        Techlogo = Label(self.master, image=img)
+        # create an object of the Image
+        img = PhotoImage(file="Spring-2022/tech.gif")
+        # create a Label to display the Image object
+        Techlogo = Label(self, image=img)
         Techlogo.image = img
-        Techlogo.place(x=300, y=100)
+        Techlogo.place(x=625, y=350)
 
         
 # Driver Code
 app = tkinterApp()
+app.geometry("800x500") # Width x Height
 app.mainloop()
 
