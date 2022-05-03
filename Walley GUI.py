@@ -1,6 +1,7 @@
 from tkinter import *
 #import serial
 
+
 LARGEFONT =("Verdana", 35)
 
 
@@ -45,9 +46,9 @@ LARGEFONT =("Verdana", 35)
             # converts the int value to str then enocdes the str value into byte
             
 
-            # Recives info from arduino as bytes and decripts it into str value
-            # RXD = (bluetooth.readline()).strip().decode("utf-8")
-            # print(RXD)
+        # Recives info from arduino as bytes and decripts it into str value
+        # RXD = (bluetooth.readline()).strip().decode("utf-8")
+        # print(RXD)
 
 
 class tkinterApp(Tk):
@@ -143,13 +144,17 @@ class Page1(Frame):
         button2 = Button(self, text ="Manual", command = lambda : controller.show_frame(Page2))
         button2.grid(row = 2, column = 1, padx = 10, pady = 10)
 
-        Auto = Button(self, text = "Clean", bg="black", fg="white", command=lambda : self.process("Clean"))
+        Auto = Button(self, text = "Clean", bg="black", fg="white") #, command=lambda : self.process("Clean"))
         Auto.place(x =  360, y = 150)
 
-        img = PhotoImage(file="Spring-2022/latechlogo.gif")
-        Techlogo = Label(self.master, image=img)
-        Techlogo.image = img
-        Techlogo.place(x=360, y=200)
+        #Initialize the file name in a variable
+        path = "Spring-2022/latechlogo.gif"
+        #Create an object of tkinter ImageTk
+        img = PhotoImage(file=(path))
+
+        #Create a Label Widget to display the text or Image
+        Techlogo = Label(self.master, image = img)
+        Techlogo.place(x=200, y=100)
 
 
 # third window frame page2
@@ -193,7 +198,7 @@ class Page2(Frame): #, Process):
         img = PhotoImage(file="Spring-2022/latechlogo.gif")
         Techlogo = Label(self.master, image=img)
         Techlogo.image = img
-        Techlogo.place(x=500, y=200)
+        Techlogo.place(x=300, y=100)
 
         
 # Driver Code
