@@ -86,21 +86,4 @@ void loop() {
     stop();
   }
   Serial.print('\t');
-
-  int a = GamePad.getAngle();
-  Serial.print("Angle: ");
-  Serial.print(a);
-  Serial.print('\t');
-  int b = GamePad.getRadius();
-  Serial.print("Radius: ");
-  Serial.print(b);
-  Serial.print('\t');
-  float c = GamePad.getXaxisData();
-  Serial.print("x_axis: ");
-  Serial.print(c);
-  Serial.print('\t');
-  float d = GamePad.getYaxisData();
-  Serial.print("y_axis: ");
-  Serial.println(d);
-  Serial.println();
 }
