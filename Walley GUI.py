@@ -1,9 +1,7 @@
 from tkinter import *
 #import serial
 
-
 LARGEFONT =("Verdana", 35)
-
 
 # creates the connection for serial transmission
 # bluetooth = serial.Serial("/dev/rfcomm0", baudrate=9600)
@@ -45,24 +43,18 @@ LARGEFONT =("Verdana", 35)
 
             # converts the int value to str then enocdes the str value into byte
             
-
         # Recives info from arduino as bytes and decripts it into str value
         # RXD = (bluetooth.readline()).strip().decode("utf-8")
         # print(RXD)
 
 
 class tkinterApp(Tk):
-    
     # __init__ function for class tkinterApp
-    def __init__(self, *args, **kwargs):
-        
-        # __init__ function for class Tk
+    def __init__(self, *args, **kwargs):        
         Tk.__init__(self, *args, **kwargs)
-        
         # creating a container
         container = Frame(self)
         container.pack(side = "top", fill = "both", expand = True)
-
         container.grid_rowconfigure(0, weight = 1)
         container.grid_columnconfigure(0, weight = 1)
 
@@ -70,50 +62,36 @@ class tkinterApp(Tk):
         self.frames = {}
 
         # iterating through a tuple consisting
-        # of the different page layouts
+        # of the different pages
         for F in (StartPage, Page1, Page2):
-
             frame = F(container, self)
 
             # initializing frame of that object from
-            # startpage, page1, page2 respectively with
-            # for loop
+            # startpage, page1, page2 respectively
             self.frames[F] = frame
-
             frame.grid(row = 0, column = 0, sticky ="nsew")
-
         self.show_frame(StartPage)
 
-    # to display the current frame passed as
-    # parameter
+    # to display the current frame
     def show_frame(self, cont):
         frame = self.frames[cont]
         frame.tkraise()
 
 
-# first window frame startpage
+# first window frame
+# contains the main page contents.
 class StartPage(Frame):
     def __init__(self, parent, controller):
         Frame.__init__(self, parent)
 
         # label of frame Layout 2
         label = Label(self, text ="Whiteboard Walley", font = LARGEFONT, fg = "blue")
-
         label.place(x=170, y=100)
-
-        button1 = Button(self, text ="Automatic",
-        command = lambda : controller.show_frame(Page1))
-    
-        # putting the button in its place by
-        # using grid
+        button1 = Button(self, text ="Automatic", command = lambda : controller.show_frame(Page1))
         button1.grid(row = 1, column = 1, padx = 10, pady = 10)
 
-        ## button to show frame 2 with text layout2
-        button2 = Button(self, text ="Manual",
-        command = lambda : controller.show_frame(Page2))
-    
-        # putting the button in its place by
-        # using grid
+        # button to show frame 2 with text layout2
+        button2 = Button(self, text ="Manual", command = lambda : controller.show_frame(Page2))
         button2.grid(row = 2, column = 1, padx = 10, pady = 10)
 
         # create an Image object
@@ -124,34 +102,28 @@ class StartPage(Frame):
         Techlogo.place(x=625, y=350)
 
         
-# second window frame page1
+# second window frame
 # contains the automatic profile
 class Page1(Frame):
-    
     def __init__(self, parent, controller):
-        
         Frame.__init__(self, parent)
         label = Label(self, text ="Automatic", font = LARGEFONT)
         label.place(x=260,y=0)
-        # button to show frame 2 with text
-        # layout2
+
+        # button to transition to main page again
         button1 = Button(self, text ="Whiteboard Walley", command = lambda : controller.show_frame(StartPage))
-    
-        # putting the button in its place
-        # by using grid
         button1.grid(row = 1, column = 1, padx = 10, pady = 10)
 
-        # button to show frame 2 with text
-        # layout2
+        # button used to transition to the manual settings
         button2 = Button(self, text ="Manual", command = lambda : controller.show_frame(Page2))
         button2.grid(row = 2, column = 1, padx = 10, pady = 10)
 
+        # button that is used to start the automatic cleaning cycle
         Auto = Button(self, text = "   Clean   ", bg="black", fg="white") #, command=lambda : self.process("Clean"))
         Auto.place(x =  360, y = 150)
 
-        #Create an object of Image
+        # adds the tech logo to this page
         img = PhotoImage(file="Spring-2022/tech.gif")
-        #Create a Label Widget to display image
         Techlogo = Label(self, image = img)
         Techlogo.image = img
         Techlogo.place(x=625, y=350)
@@ -167,22 +139,15 @@ class Page2(Frame): #, Process):
         # Process.__init__(self, button)
         # button = self.button
 
-        # button to show frame 2 with text
-        # layout2
+        # button used to switch to the automatic page
         button1 = Button(self, text ="Automatic", command = lambda : controller.show_frame(Page1))
-    
-        # putting the button in its place by
-        # using grid
         button1.grid(row = 1, column = 1, padx = 10, pady = 10)
 
-        # button to show frame 3 with text
-        # layout3
+        # button that sends the user back to the main page
         button2 = Button(self, text ="Whiteboard Walley", command = lambda : controller.show_frame(StartPage))
-    
-        # putting the button in its place by
-        # using grid
         button2.grid(row = 2, column = 1, padx = 10, pady = 10)
 
+        # these buttons control the manual movement of the robot
         Up = Button(self, text = "UP", height = 1, width = 5, bg="black", fg="white") #, command=lambda: self.procces("Up"))
         Up.place(x = 360,y = 100)
 
@@ -195,16 +160,14 @@ class Page2(Frame): #, Process):
         Right = Button(self, text = "RIGHT", height = 1, width = 5, bg="black", fg="white") #, command=lambda: self.process("Right"))
         Right.place(x = 425,y = 125)
 
-        # create an object of the Image
+        # adds the Tech logo to this page
         img = PhotoImage(file="Spring-2022/tech.gif")
-        # create a Label to display the Image object
         Techlogo = Label(self, image=img)
         Techlogo.image = img
         Techlogo.place(x=625, y=350)
 
-        
+
 # Driver Code
 app = tkinterApp()
 app.geometry("800x500") # Width x Height
 app.mainloop()
-
