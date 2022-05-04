@@ -95,7 +95,7 @@ class StartPage(Frame):
         button2.grid(row = 2, column = 1, padx = 10, pady = 10)
 
         # create an Image object
-        img = PhotoImage(file="Spring-2022/tech.gif")
+        img = PhotoImage(file="tech.gif")
         # create a label in order to present the Image object
         Techlogo = Label(self, image=img)
         Techlogo.image = img
@@ -123,7 +123,7 @@ class Page1(Frame):
         Auto.place(x =  360, y = 150)
 
         # adds the tech logo to this page
-        img = PhotoImage(file="Spring-2022/tech.gif")
+        img = PhotoImage(file="tech.gif")
         Techlogo = Label(self, image = img)
         Techlogo.image = img
         Techlogo.place(x=625, y=350)
@@ -161,7 +161,7 @@ class Page2(Frame): #, Process):
         Right.place(x = 425,y = 125)
 
         # adds the Tech logo to this page
-        img = PhotoImage(file="Spring-2022/tech.gif")
+        img = PhotoImage(file="tech.gif")
         Techlogo = Label(self, image=img)
         Techlogo.image = img
         Techlogo.place(x=625, y=350)
