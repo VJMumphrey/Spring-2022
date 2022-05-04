@@ -99,7 +99,7 @@ class StartPage(Frame):
         # create a label in order to present the Image object
         Techlogo = Label(self, image=img)
         Techlogo.image = img
-        Techlogo.place(x=625, y=350)
+        Techlogo.place(x=625, y=300)
 
         
 # second window frame
@@ -126,7 +126,7 @@ class Page1(Frame):
         img = PhotoImage(file="tech.gif")
         Techlogo = Label(self, image = img)
         Techlogo.image = img
-        Techlogo.place(x=625, y=350)
+        Techlogo.place(x=625, y=300)
 
 
 # third window frame page2
@@ -164,10 +164,10 @@ class Page2(Frame): #, Process):
         img = PhotoImage(file="tech.gif")
         Techlogo = Label(self, image=img)
         Techlogo.image = img
-        Techlogo.place(x=625, y=350)
+        Techlogo.place(x=625, y=300)
 
 
 # Driver Code
 app = tkinterApp()
-app.geometry("800x500") # Width x Height
+app.geometry("800x425") # Width x Height
 app.mainloop()
