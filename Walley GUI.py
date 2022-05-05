@@ -87,7 +87,7 @@ class StartPage(Frame):
 
         # label of frame Layout 2
         label = Label(self, text ="Whiteboard Walley", font = LARGEFONT, fg = "blue")
-        label.place(x=170, y=100)
+        label.place(x=170, y=50)
         button1 = Button(self, text ="Automatic", command = lambda : controller.show_frame(Page1))
         button1.grid(row = 1, column = 1, padx = 10, pady = 10)
 
@@ -115,7 +115,7 @@ class StartPage(Frame):
         # create a label in order to present the Image object
         Champlogo = Label(self, image=img)
         Champlogo.image = img
-        Champlogo.place(x=50, y=100)
+        Champlogo.place(x=10, y=150)
 
 
         
