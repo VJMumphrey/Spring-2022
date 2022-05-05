@@ -2,6 +2,7 @@ from tkinter import *
 #import serial
 
 LARGEFONT =("Verdana", 35)
+MEDIUMFONT=("Verdana",20)
 
 # creates the connection for serial transmission
 # bluetooth = serial.Serial("/dev/rfcomm0", baudrate=9600)
@@ -100,6 +101,22 @@ class StartPage(Frame):
         Techlogo = Label(self, image=img)
         Techlogo.image = img
         Techlogo.place(x=625, y=300)
+
+        #louisiana label
+        louisiana = Label(self, text="Louisiana", font=MEDIUMFONT, fg="red")
+        louisiana.place(x=325, y=340)
+
+        #tech label
+        tech = Label(self, text="Tech", font=MEDIUMFONT, fg="blue")
+        tech.place(x=350, y=375)
+
+        #champ pic Image
+        img = PhotoImage(file="champ.gif")
+        # create a label in order to present the Image object
+        Champlogo = Label(self, image=img)
+        Champlogo.image = img
+        Champlogo.place(x=200, y=300)
+
 
         
 # second window frame
