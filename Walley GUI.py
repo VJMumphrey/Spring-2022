@@ -115,7 +115,7 @@ class StartPage(Frame):
         # create a label in order to present the Image object
         Champlogo = Label(self, image=img)
         Champlogo.image = img
-        Champlogo.place(x=100, y=200)
+        Champlogo.place(x=50, y=100)
 
 
         
