@@ -108,7 +108,7 @@ class StartPage(Frame):
 
         #tech label
         tech = Label(self, text="Tech", font=MEDIUMFONT, fg="blue")
-        tech.place(x=350, y=375)
+        tech.place(x=360, y=375)
 
         #champ pic Image
         img = PhotoImage(file="champ.gif")
@@ -125,7 +125,7 @@ class Page1(Frame):
     def __init__(self, parent, controller):
         Frame.__init__(self, parent)
         label = Label(self, text ="Automatic", font = LARGEFONT, fg="red")
-        label.place(x=260,y=0)
+        label.place(x=280,y=0)
 
         # button to transition to main page again
         button1 = Button(self, text ="Whiteboard Walley", command = lambda : controller.show_frame(StartPage))
@@ -152,7 +152,7 @@ class Page1(Frame):
 
         #tech label
         tech = Label(self, text="Tech", font=MEDIUMFONT, fg="blue")
-        tech.place(x=350, y=375)
+        tech.place(x=360, y=375)
 
 
 # third window frame page2
@@ -199,7 +199,7 @@ class Page2(Frame): #, Process):
 
         #tech label
         tech = Label(self, text="Tech", font=MEDIUMFONT, fg="blue")
-        tech.place(x=350, y=375)
+        tech.place(x=360, y=375)
 
 
 # Driver Code
