@@ -146,6 +146,15 @@ class Page1(Frame):
         Techlogo.place(x=625, y=300)
 
 
+        #louisiana label
+        louisiana = Label(self, text="Louisiana", font=MEDIUMFONT, fg="red")
+        louisiana.place(x=325, y=340)
+
+        #tech label
+        tech = Label(self, text="Tech", font=MEDIUMFONT, fg="blue")
+        tech.place(x=350, y=375)
+
+
 # third window frame page2
 # contains the manual profile
 class Page2(Frame): #, Process):
@@ -182,6 +191,15 @@ class Page2(Frame): #, Process):
         Techlogo = Label(self, image=img)
         Techlogo.image = img
         Techlogo.place(x=625, y=300)
+
+
+        #louisiana label
+        louisiana = Label(self, text="Louisiana", font=MEDIUMFONT, fg="red")
+        louisiana.place(x=325, y=340)
+
+        #tech label
+        tech = Label(self, text="Tech", font=MEDIUMFONT, fg="blue")
+        tech.place(x=350, y=375)
 
 
 # Driver Code
