@@ -1,9 +1,6 @@
 from tkinter import *
 #import serial
 
-LARGEFONT =("Verdana", 35)
-MEDIUMFONT=("Verdana",20)
-
 # creates the connection for serial transmission
 # bluetooth = serial.Serial("/dev/rfcomm0", baudrate=9600)
 
@@ -48,6 +45,8 @@ MEDIUMFONT=("Verdana",20)
         # RXD = (bluetooth.readline()).strip().decode("utf-8")
         # print(RXD)
 
+LARGEFONT =("Verdana", 35)
+MEDIUMFONT=("Verdana",20)
 
 class tkinterApp(Tk):
     # __init__ function for class tkinterApp
