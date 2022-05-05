@@ -137,7 +137,7 @@ class Page1(Frame):
 
         # button that is used to start the automatic cleaning cycle
         Auto = Button(self, text = "   Clean   ", bg="black", fg="white") #, command=lambda : self.process("Clean"))
-        Auto.place(x =  360, y = 100)
+        Auto.place(x = 350, y = 100)
 
         # adds the tech logo to this page
         img = PhotoImage(file="tech.gif")
