@@ -124,7 +124,7 @@ class StartPage(Frame):
 class Page1(Frame):
     def __init__(self, parent, controller):
         Frame.__init__(self, parent)
-        label = Label(self, text ="Automatic", font = LARGEFONT)
+        label = Label(self, text ="Automatic", font = LARGEFONT, fg="red")
         label.place(x=260,y=0)
 
         # button to transition to main page again
@@ -137,7 +137,7 @@ class Page1(Frame):
 
         # button that is used to start the automatic cleaning cycle
         Auto = Button(self, text = "   Clean   ", bg="black", fg="white") #, command=lambda : self.process("Clean"))
-        Auto.place(x =  360, y = 150)
+        Auto.place(x =  360, y = 100)
 
         # adds the tech logo to this page
         img = PhotoImage(file="tech.gif")
@@ -160,7 +160,7 @@ class Page1(Frame):
 class Page2(Frame): #, Process):
     def __init__(self, parent, controller):
         Frame.__init__(self, parent)
-        label = Label(self, text ="Manual", font = LARGEFONT)
+        label = Label(self, text ="Manual", font = LARGEFONT, fg="red")
         label.place(x=300,y=0)
         # Process.__init__(self, button)
         # button = self.button
